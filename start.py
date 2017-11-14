@@ -28,12 +28,12 @@ def home():
    v1_last.put()
    return render_template('home.html')
 
-@application.route('/sumav1', methods=['POST'])
+@application.route('/sumav2', methods=['POST'])
 def sumav1():
    v1_last=Version.get_by_id('v1')
    v1_last.likes+=1
    v1_last.put()
-   return render_template('like-v1.html')
+   return render_template('like-v2.html')
 
 @application.route('/dashboard')
 def dashboard():
