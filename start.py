@@ -1,6 +1,6 @@
 import logging
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from google.appengine.ext import ndb
 from google.appengine.api import memcache
 
@@ -30,12 +30,10 @@ def sumav1():
    v1_last.put()
    return render_template('like-v1.html')
 
-@application.route('/stats/v1', methods=['POST'])
-def sumav1():
-   v1_last=Version.get_by_id('v1')
-   cur_likes=v1_last.likes
-   cur_views=v1_last.views
-   return {"views":cur_views,"likes":cur_likes}
+@application.route('/stats/v1', methods=['POST','GET'])
+def stats_v1():
+   data {"views":Version.get_by_id('v1').views,"likes":Version.get_by_id('v1').likes}
+   return jsonify(data)
 
 @application.errorhandler(500)
 def server_error(e):
