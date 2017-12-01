@@ -32,7 +32,7 @@ def sumav1():
 
 @application.route('/stats/v1', methods=['POST','GET'])
 def stats_v1():
-   data {"views":Version.get_by_id('v1').views,"likes":Version.get_by_id('v1').likes}
+   data={"views":Version.get_by_id('v1').views,"likes":Version.get_by_id('v1').likes}
    return jsonify(data)
 
 @application.errorhandler(500)
