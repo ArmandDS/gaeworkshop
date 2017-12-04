@@ -12,14 +12,14 @@ class Version(ndb.Model):
    views=ndb.FloatProperty()
 
 
-namespace_manager.set_namespace('VER_1')
-v1=Version.get_by_id('v1')
-if not v1:
-   v1=Version(likes=1,views=1,id='v1')
-   v1_key=v1.put()
-
 @application.route('/')
 def home():
+   namespace_manager.set_namespace('VER_1')
+   v1=Version.get_by_id('v1')
+   if not v1:
+      v1=Version(likes=1,views=1,id='v1',namespace='VER_1')
+      v1_key=v1.put()
+
    v1_last=Version.get_by_id('v1')
    v1_last.views+=1
    v1_last.put()
@@ -27,6 +27,7 @@ def home():
 
 @application.route('/sumav1', methods=['POST'])
 def sumav1():
+   namespace_manager.set_namespace('VER_1')
    v1_last=Version.get_by_id('v1')
    v1_last.likes+=1
    v1_last.put()
@@ -34,7 +35,8 @@ def sumav1():
 
 @application.route('/stats/v1', methods=['POST','GET'])
 def stats_v1():
-   data={"views":Version.get_by_id('v1').views,"likes":Version.get_by_id('v1').likes}
+   namespace_manager.set_namespace('VER_1')
+   data={"version":namespace_manager.get_namespace(),"views":Version.get_by_id('v1').views,"likes":Version.get_by_id('v1').likes}
    return jsonify(data)
 
 @application.errorhandler(500)
