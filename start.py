@@ -17,7 +17,7 @@ def home():
    namespace_manager.set_namespace('VER_1')
    v1=Version.get_by_id('v1')
    if not v1:
-      v1=Version(likes=1,views=1,id='v1',namespace='VER_1')
+      v1=Version(likes=1,views=1,id='v1')
       v1_key=v1.put()
 
    v1_last=Version.get_by_id('v1')
