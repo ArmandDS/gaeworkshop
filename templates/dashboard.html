@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
     <head>
-        <title>App Engine Dashboard</title>
+        <title>App Engine Dashboard Service</title>
         <meta http-equiv="refresh" content="10">
         <link rel="stylesheet" href="static/style.css" type="text/css" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
@@ -32,13 +33,15 @@
 
     <body color="grey">
         <div class="div-img-left">
-	    </div>
+	    <h2> {{ v[6] }}   </h2>
+        </div>
         <div class="div-label-left">
             <h2> {{ v[0] }} Like Ratio </h2>
         </div>
         
         <div class="div-img-right">
-	    </div>
+	    <h2> {{ v[7] }}   </h2>
+	</div>
         <div class="div-label-right">
             <h2> {{ v[1] }} Like Ratio </h2>
         </div>

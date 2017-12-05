@@ -1,6 +1,7 @@
 runtime: python27
 api_version: 1
 threadsafe: true
+service: dashboard
 
 handlers:
 - url: /static
@@ -10,4 +11,6 @@ handlers:
 
 skip_files:
 - ^(.*/)?.*\.py[co]$
+
+
 

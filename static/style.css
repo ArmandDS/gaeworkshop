@@ -76,7 +76,6 @@ font-family: 'Lato', sans-serif;
 }
 
 .div-img-left {
-background-image: url(bg-img-v1.jpg) ; 
 background-size: cover;
 height: 40%;
 width: 30%;
@@ -90,7 +89,7 @@ background: rgba(255,255,255,0.6);
 color: black;
 position: absolute;
 left: 5%;
-top: 5%;
+top: 10%;
 padding: 2px;
 font-family: 'Lato', sans-serif;
 font-size:1.1em;
@@ -98,7 +97,6 @@ width: 30%;
 }
 
 .div-img-right {
-background-image: url(bg-img-v2.jpg); 
 background-size: cover;
 height: 40%;
 width: 30%;
@@ -112,7 +110,7 @@ background: rgba(255,255,255,0.6);
 color: black;
 position: absolute;
 right: 5%;
-top: 5%;
+top: 10%;
 padding: 2px;
 font-family: 'Lato', sans-serif;
 font-size:1.1em;
