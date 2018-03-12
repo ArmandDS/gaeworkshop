@@ -22,5 +22,5 @@ def dashboard():
 
 @application.route('/raw')
 def raw():
-  def_srv_versions=modules.modules.get_versions(module='default')
+  def_srv_versions=modules.modules.get_versions('default')
   return {'versions:'+str(def_srv_versions)}
