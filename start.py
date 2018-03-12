@@ -2,7 +2,7 @@ import logging, requests, requests_toolbelt.adapters.appengine
 
 from flask import Flask, render_template, request, jsonify
 from google.appengine.ext import ndb
-from google.appengine.api import memcache, namespace_manager
+from google.appengine.api import memcache, namespace_manager, modules
 
 
 application = Flask(__name__)
@@ -22,5 +22,5 @@ def dashboard():
 
 @application.route('/raw')
 def raw():
-  def_srv_versions=modules.get_versions(module='default')
+  def_srv_versions=modules.modules.get_versions(module='default')
   return {'versions:'+str(def_srv_versions)}
