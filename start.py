@@ -19,3 +19,8 @@ def dashboard():
    views2=stats_2.json()['views']
    
    return render_template('dashboard.html',v=[round(likes1/views1,3),round(likes2/views2,3),views1,likes1,views2,likes2,'v1','v2'])
+
+@application.route('/raw')
+def raw():
+  def_srv_versions=modules.get_versions(module='default')
+  return {'versions:'+str(def_srv_versions)}
