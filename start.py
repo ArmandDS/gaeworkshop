@@ -11,6 +11,7 @@ project_name=app_identity.app_identity.get_default_version_hostname()
 
 @application.route('/')
 def dashboard():
+   #Changing to use modules API
    requests_toolbelt.adapters.appengine.monkeypatch()
    name_v1=modules.modules.get_versions('default')[0]
    name_v2=modules.modules.get_versions('default')[1]
