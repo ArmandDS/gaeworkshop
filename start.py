@@ -30,5 +30,6 @@ def dashboard():
 
 @application.route('/raw')
 def raw():
+  #raw response
   def_srv_versions=modules.modules.get_versions('default')
   return jsonify({"versions":def_srv_versions})
